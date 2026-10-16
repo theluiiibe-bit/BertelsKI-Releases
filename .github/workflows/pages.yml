@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   pages: write
   id-token: write
 
@@ -34,6 +35,23 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs
+      - name: Wait for uploaded Pages artifact to become visible to GitHub API
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 12); do
+            names="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts" --jq '.artifacts[].name' || true)"
+            if grep -Fxq 'github-pages' <<<"$names"; then
+              echo "Pages artifact confirmed in Actions API."
+              exit 0
+            fi
+            echo "Pages artifact not indexed yet (attempt $attempt/12); retrying."
+            sleep 5
+          done
+          echo "::error::GitHub Pages artifact still not visible; refusing to mark deployment successful."
+          exit 1
       - name: Deploy Pages
         id: deployment
         uses: actions/deploy-pages@v4
