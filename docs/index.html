@@ -22,7 +22,7 @@ h2{margin:17px 0 10px;font-size:22px}a{color:#a9bfff}footer{font-size:13px;color
 <div class="status" id="release-status">● Noch kein Update freigegeben</div>
 <h2 id="release-heading">Die Update-Webseite ist eingerichtet</h2>
 <p id="release-details">Der öffentliche Updatekanal wird vorbereitet. Ein neuer Installer erscheint hier erst nach erfolgreichem Windows-Build, zwei Prüfdurchläufen, Installationstest und verifizierter digitaler Signatur.</p>
-<p id="release-hint">Deine bereits installierte Meine KI kann bis dahin unverändert weiterverwendet werden. Ein fehlendes Update-Manifest bedeutet: Es gibt derzeit kein veröffentlichtes Update.</p><p id="release-link"></p>
+<p id="release-hint">Deine bereits installierte Meine KI kann bis dahin unverändert weiterverwendet werden. Ein fehlendes Update-Manifest bedeutet: Es gibt derzeit kein veröffentlichtes Update.</p><p id="release-link"></p><p>Hinweis: Eine ältere Datei namens <code>Meine_KI_Setup.exe</code> im Downloads-Ordner ist nicht automatisch die aktuelle Version. Prüfe im Installationsfenster oben die Versionsnummer.</p>
 </section>
 <section class="card">
 <h2>Sicherheit und Entwicklung</h2>
@@ -35,7 +35,7 @@ h2{margin:17px 0 10px;font-size:22px}a{color:#a9bfff}footer{font-size:13px;color
 (function () {
   // The public site only displays availability. The installed app MUST verify Ed25519
   // against a separately trusted public key and SHA-256 before installation.
-  fetch('./updates/manifest.json', {cache:'no-store'}).then(function (res) {
+  fetch('./updates/manifest.json?refresh=' + Date.now(), {cache:'no-store'}).then(function (res) {
     if (!res.ok) throw new Error('No update released');
     return res.json();
   }).then(function (manifest) {
@@ -52,8 +52,8 @@ h2{margin:17px 0 10px;font-size:22px}a{color:#a9bfff}footer{font-size:13px;color
     document.getElementById('release-hint').textContent =
       'Die Webseite zeigt Verfügbarkeit an. Die kryptografische Echtheitsprüfung führt die Meine-KI-App anhand eines unabhängig bestätigten Prüfschlüssels aus.';
     var a = document.createElement('a');
-    a.href = './updates/Meine_KI_Setup.exe';
-    a.textContent = 'Windows-Installer herunterladen';
+    a.href = './updates/Meine_KI_Setup.exe?v=' + encodeURIComponent(p.version);
+    a.textContent = 'BertelsKI ' + p.version + ' – Windows-Installer herunterladen';
     document.getElementById('release-link').appendChild(a);
   }).catch(function () { /* No signed feed released yet; retain truthful default */ });
 }());
