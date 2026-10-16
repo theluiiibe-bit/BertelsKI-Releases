@@ -1,0 +1,9 @@
+*.pem
+*.key
+*.pfx
+*.p12
+.env
+*.sqlite
+*.db
+BUILD_PROTOKOLL.txt
+__pycache__/
