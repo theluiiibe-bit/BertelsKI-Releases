@@ -40,7 +40,7 @@ h2{margin:17px 0 10px;font-size:22px}a{color:#a9bfff}footer{font-size:13px;color
     return res.json();
   }).then(function (manifest) {
     var p = manifest && manifest.payload;
-    if (!p || !/^\\d+\\.\\d+(?:\\.\\d+)?$/.test(p.version) ||
+    if (!p || !/^\d+\.\d+(?:\.\d+)?$/.test(p.version) ||
         !/^[a-f0-9]{64}$/.test(p.sha256) || !Number.isSafeInteger(p.size) ||
         p.size < 100000 || p.size > 1073741824 ||
         typeof manifest.signature !== 'string') return;
