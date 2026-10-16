@@ -19,10 +19,10 @@ h2{margin:17px 0 10px;font-size:22px}a{color:#a9bfff}footer{font-size:13px;color
 <body><main>
 <header><div class="mark" aria-hidden="true">✦</div><div><h1>BertelsKI</h1><p style="margin:4px 0 0">Offizieller Updatekanal für Meine KI</p></div></header>
 <section class="card" aria-label="Update-Status">
-<div class="status">● Noch kein Update freigegeben</div>
-<h2>Die Update-Webseite ist eingerichtet</h2>
-<p>Der öffentliche Updatekanal wird vorbereitet. Ein neuer Installer erscheint hier erst nach erfolgreichem Windows-Build, zwei Prüfdurchläufen, Installationstest und verifizierter digitaler Signatur.</p>
-<p>Deine bereits installierte Meine KI kann bis dahin unverändert weiterverwendet werden. Ein fehlendes Update-Manifest bedeutet: Es gibt derzeit kein veröffentlichtes Update.</p>
+<div class="status" id="release-status">● Noch kein Update freigegeben</div>
+<h2 id="release-heading">Die Update-Webseite ist eingerichtet</h2>
+<p id="release-details">Der öffentliche Updatekanal wird vorbereitet. Ein neuer Installer erscheint hier erst nach erfolgreichem Windows-Build, zwei Prüfdurchläufen, Installationstest und verifizierter digitaler Signatur.</p>
+<p id="release-hint">Deine bereits installierte Meine KI kann bis dahin unverändert weiterverwendet werden. Ein fehlendes Update-Manifest bedeutet: Es gibt derzeit kein veröffentlichtes Update.</p><p id="release-link"></p>
 </section>
 <section class="card">
 <h2>Sicherheit und Entwicklung</h2>
@@ -30,4 +30,31 @@ h2{margin:17px 0 10px;font-size:22px}a{color:#a9bfff}footer{font-size:13px;color
 <p><a href="https://github.com/theluiiibe-bit/BertelsKI-Releases">Öffentliches Release-Repository auf GitHub öffnen ↗</a></p>
 </section>
 <footer>© BertelsKI · Keine Installation ohne Freigabe · Keine öffentlichen Zugangsschlüssel</footer>
-</main></body></html>
+</main>
+<script>
+(function () {
+  // The public site only displays availability. The installed app MUST verify Ed25519
+  // against a separately trusted public key and SHA-256 before installation.
+  fetch('./updates/manifest.json', {cache:'no-store'}).then(function (res) {
+    if (!res.ok) throw new Error('No update released');
+    return res.json();
+  }).then(function (manifest) {
+    var p = manifest && manifest.payload;
+    if (!p || !/^\\d+\\.\\d+(?:\\.\\d+)?$/.test(p.version) ||
+        !/^[a-f0-9]{64}$/.test(p.sha256) || !Number.isSafeInteger(p.size) ||
+        p.size < 100000 || p.size > 1073741824 ||
+        typeof manifest.signature !== 'string') return;
+    document.getElementById('release-status').textContent = '● Installer verfügbar';
+    document.getElementById('release-heading').textContent = 'BertelsKI ' + p.version;
+    document.getElementById('release-details').textContent =
+      'Windows-Installer bereitgestellt (' + (p.size / 1048576).toFixed(1) +
+      ' MB). Prüfe die digitale Signatur und Dateiprüfsumme vor der Installation.';
+    document.getElementById('release-hint').textContent =
+      'Die Webseite zeigt Verfügbarkeit an. Die kryptografische Echtheitsprüfung führt die Meine-KI-App anhand eines unabhängig bestätigten Prüfschlüssels aus.';
+    var a = document.createElement('a');
+    a.href = './updates/Meine_KI_Setup.exe';
+    a.textContent = 'Windows-Installer herunterladen';
+    document.getElementById('release-link').appendChild(a);
+  }).catch(function () { /* No signed feed released yet; retain truthful default */ });
+}());
+</script></body></html>
