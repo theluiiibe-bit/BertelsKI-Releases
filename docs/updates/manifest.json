@@ -1,9 +1,9 @@
 {
   "payload": {
-    "version": "0.65",
+    "version": "0.66",
     "url": "https://theluiiibe-bit.github.io/BertelsKI-Releases/updates/Meine_KI_Setup.exe",
-    "sha256": "4c13276330d2ef4ed6a9c3e22691feb6911a7139ed533340fafeb41b750a749b",
-    "size": 18582041
+    "sha256": "c7eecee2437ff19523ab909c35015ca54450fd6ca2be5c30f0b5113883651b46",
+    "size": 18583884
   },
-  "signature": "XIsAfT8EnF6Kgc549R0+Kfzn0MKYpHj19+rbzCpqO0y/HD6dxmt0aArIHsn59PlglhPkRuAJtqMyIdiVEXtZBA=="
+  "signature": "zujnHB1dYsSlWRri+Zw6g3iY9I9vw+w27gMpfSK8BLoVGVXCBx1Z7/LWP1jfYpJvoD5Tyt0M/UCQt3nHBGkFAg=="
 }
