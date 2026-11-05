@@ -1,0 +1,31 @@
+# LF-02 · Voiceover fürs Ohr · Artlist AI Voiceover · Kanalstimme, sachlicher als LF-01
+# Aussprache: SmartScreen englisch · certutil = „zert-ju-til“ · SHA-256 = „Scha zwei-fünf-sechs“ · Ed25519 = „Ed zwei-fünf-fünf-eins-neun“ · Authenticode = „Au-then-ti-kohd“
+Du lädst unsere App runter, startest sie ... und Windows sagt: Der Computer wurde geschützt. Unbekannter Herausgeber.
+
+Ehrlich? Das ist richtig so. Windows kennt uns noch nicht.
+
+Aber „Trotzdem ausführen“ zu klicken, weil ein Video es sagt, das wäre falsch. Also prüfen wir die Datei jetzt gemeinsam. Sechzig Sekunden. Zwei Schritte. Danach weißt du es, statt es zu hoffen.
+
+Was prüft SmartScreen eigentlich? Zwei Dinge. Erstens: Kennt Microsoft diese Datei schon von vielen anderen Rechnern? Zweitens: Trägt sie ein Zertifikat, das Microsoft vertraut. Junge Software von einem kleinen Team hat beides noch nicht. Deshalb die Warnung.
+
+Und die Warnung ist kein Virus-Fund. Das ist der Punkt, den fast alle verwechseln. Sie heißt: unbekannt. Nicht: gefährlich.
+
+Wir könnten das verstecken. Machen wir nicht. Wir zeigen dir lieber, wie du selbst prüfst.
+
+Schritt eins: die Prüfsumme. Öffne die Eingabeaufforderung. Tippe: certutil, Leerzeichen, Bindestrich hashfile, Leerzeichen, der Dateiname, Leerzeichen, SHA256. Enter.
+
+Da steht jetzt eine lange Zeichenkette. Das ist der Fingerabdruck der Datei. Jede kleinste Änderung an der Datei, und der Fingerabdruck wäre ein anderer.
+
+Jetzt der Vergleich. Auf unserer offiziellen Seite liegt eine Datei namens Manifest. Darin steht der Fingerabdruck, den wir beim Bauen berechnet haben. ... Die ersten sechs Zeichen, die letzten sechs Zeichen. Gleich? Dann ist die Datei unverändert.
+
+Schritt zwei, und der ist wichtiger. Eine Prüfsumme kann jeder fälschen, der die Datei und das Manifest zusammen austauscht. Deshalb ist das Manifest signiert.
+
+Stell dir ein Siegel vor. Wir haben einen geheimen Schlüssel, der nie den Build-Rechner verlässt. Damit siegeln wir das Manifest. Und es gibt einen öffentlichen Schlüssel, den jeder haben darf. Mit dem kann jeder prüfen, ob das Siegel echt ist. Aber niemand kann damit siegeln.
+
+Genau das macht der Updater in der App, bevor er irgendetwas installiert. Passt das Siegel nicht, bricht er ab. Und auch wenn es passt, fragt er dich erst.
+
+Was wir noch nicht haben: ein Authenticode-Zertifikat. Das ist das, was die SmartScreen-Warnung verschwinden lässt. Es kostet Geld und eine Identitätsprüfung. Es steht auf der Liste. Bis dahin sagen wir es lieber laut, als dass du es im Kleingedruckten findest.
+
+Die Regel für jeden Download, nicht nur für unseren: Quelle prüfen, Prüfsumme vergleichen, Signatur verstehen. Und nie „Trotzdem ausführen“, nur weil jemand im Video es sagt.
+
+Alle Befehle stehen in der Beschreibung. Und wenn du sehen willst, was die App danach ohne Internet kann: das Video dazu läuft gleich weiter.

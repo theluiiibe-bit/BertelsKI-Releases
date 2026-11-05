@@ -1,0 +1,45 @@
+# LF-01 · Voiceover fürs Ohr · Artlist AI Voiceover · Kanalstimme · Tempo leicht unter Standard
+# ⚠️ Beats 3–5 und Hardware-Satz am echten Build prüfen, bevor es in Artlist geht. '#'-Zeilen werden nicht gesprochen.
+Ich stell jetzt den Flugmodus an. ... Kein WLAN, kein Kabel, nichts. Und frag meine KI trotzdem, was in diesem Vertrag steht.
+
+Da kommt die Antwort. Auf meinem Rechner. Ohne dass eine Seite davon irgendwo hochgeladen wurde.
+
+Fünf Dinge, die so gehen, zeig ich dir jetzt. Und am Ende sag ich dir ehrlich, wo das nicht reicht.
+
+Warum ist das wichtig? Wenn du Verträge, Kundendaten oder Patientenakten in einen Browser-Chat lädst, liegen die danach auf einem Server, den du nicht kennst. ... Hier bleiben sie bei dir.
+
+Nummer vier hat mich übrigens selbst überrascht. Aber der Reihe nach.
+
+Eins: Dokumente zusammenfassen. Ich zieh das PDF rein ... und frag: Was sind die drei wichtigsten Pflichten für mich als Auftragnehmer?
+
+Drei Pflichten, Fristen dabei, Seitenzahl dabei. ... Ich prüf die dritte kurz nach. Seite neun. Stimmt.
+
+Das Dokument liegt immer noch nur hier. Im Taskmanager: Netzwerk null.
+
+Übrigens: Das Ding läuft seit drei Minuten im Flugmodus. Ich lass ihn an. Bis zum Schluss.
+
+Zwei: Eine E-Mail aus Stichpunkten. Ich tippe: Absage Termin Dienstag, neuer Vorschlag Donnerstag, freundlich, kurz.
+
+Drei Sätze. Ohne „Ich hoffe, diese Mail erreicht Sie wohlauf“. ... Jetzt wird's praktisch: Ich ändere einen Punkt. Formeller.
+
+Das ist der Unterschied zur Textbaustein-Software: Du redest mit ihr, du klickst dich nicht durch Menüs.
+
+Drei: Eine Tabelle, die ich nicht verstehe. Eine Umsatzliste mit zwölf Spalten. Frage: Welche Spalte ist der Nettobetrag, und wie rechne ich die Marge aus?
+
+Antwort: Spalte F, und eine Formel. ... Ich setz sie ein. Fehler. Bezug stimmt nicht. Ich sag's ihr. Sie korrigiert.
+
+Das zeig ich absichtlich. Lokale Modelle machen Fehler. Der Punkt ist: Du siehst sie sofort, und die Tabelle hat deinen Rechner nie verlassen.
+
+Vier: Dateien finden. Das hat mich selbst überrascht. Frage: Wo ist das Angebot für Firma Meier von letztem Frühjahr?
+
+Sie durchsucht den Ordner, den ich ihr gegeben habe. Nicht die Cloud, nicht Google Drive. Meinen Ordner. ... Das hier geht in einem Browser-Chat gar nicht. Der sieht deine Festplatte nicht.
+
+Fünf: Übersetzen und umschreiben. Englischer Absatz rein, Frage: auf Deutsch, und bitte einfacher.
+
+Ich halt das mal gegen ein Online-Tool. ... Für E-Mails, Angebote, Protokolle reicht es. Für Literatur würde ich's nicht nehmen.
+
+Jetzt die ehrliche Grenze. Aktuelle Nachrichten? Weiß die lokale KI nicht. Bilder generieren? Nicht ihr Job. Und bei sehr langen Recherchen ist ein großes Cloud-Modell heute schlicht besser.
+
+Dafür brauchst du für alles, was du gesehen hast, einen normalen Windows-PC. Keine Workstation, keinen Server.
+
+Wenn du's selbst ausprobieren willst: Link unten, signierter Installer. Windows wird dich warnen, weil wir noch kein Authenticode-Zertifikat haben. Warum das so ist, und wie du den Download trotzdem prüfst, zeig ich dir im nächsten Video.

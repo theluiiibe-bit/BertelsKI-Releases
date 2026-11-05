@@ -1,0 +1,10 @@
+# SH-03 · Prüfsumme in 60 Sekunden · ~45 s · Aussprache: certutil = „zert-ju-til“, SHA256 = „Scha zwei-fünf-sechs“
+Du hast einen Installer geladen. Bevor du klickst: eine Zeile.
+
+certutil, hashfile, Dateiname, SHA256. Enter.
+
+Das ist der Fingerabdruck der Datei. Jetzt der Vergleich.
+
+Offizielle Seite, Manifest, dieselben Zeichen? ... Dann ist die Datei unverändert.
+
+Eine Sache noch. Die Prüfsumme sagt: unverändert. Ob die Datei wirklich von uns ist, sagt erst die Signatur. Die prüft der Updater automatisch. Wie, zeig ich im langen Video.

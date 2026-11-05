@@ -1,0 +1,10 @@
+# SH-02 · Lokal oder Cloud? Wo lokale KI verliert · ~35 s
+Ich baue eine lokale KI. Und sag dir trotzdem, wo sie verliert.
+
+Aktuelle Nachrichten. Weiß sie nicht. Sie hat kein Internet, das ist ja der Punkt.
+
+Bilder generieren. Nicht ihr Job.
+
+Und bei stundenlangen Recherchen ist ein großes Cloud-Modell heute schlicht besser. Ehrlich.
+
+Aber alles, was du niemandem schicken würdest: Verträge, Kundendaten, Protokolle. Das gehört auf deinen Rechner. Und da gewinnt lokal. Immer.

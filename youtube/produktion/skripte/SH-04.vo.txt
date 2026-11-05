@@ -1,0 +1,8 @@
+# SH-04 · Voiceover fürs Ohr – in Artlist AI-Voiceover einfügen (Stimme: ruhig, männlich/weiblich nach Kanalwahl)
+Flugmodus an.
+
+Netzwerk: null.
+
+Frage: Fass mir dieses Protokoll in drei Sätzen zusammen.
+
+Fertig. Nichts hat den Rechner verlassen. ... Das ist der ganze Trick. Es gibt keinen Trick.
