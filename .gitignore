@@ -7,3 +7,9 @@
 *.db
 BUILD_PROTOKOLL.txt
 __pycache__/
+# YouTube-Produktion: lokale Medien/Reports nicht veröffentlichen
+youtube/output/
+*.mp3
+*.wav
+*.mp4
+*.srt
