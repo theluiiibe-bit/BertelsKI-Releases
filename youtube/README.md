@@ -16,19 +16,22 @@ youtube/
 ├── strategie/
 │   ├── brand-profile.md                   Identität, Haltung, Zielgruppen, Stimme, Leitplanken (⚠️ = prüfen)
 │   ├── content-pillars.md                 4 Säulen, eine Signatur
-│   └── kanal-strategie-90-tage.md         Lernziel, Kadenz, Skelett, Serien, Kette, Schwellen
+│   ├── kanal-strategie-90-tage.md         Lernziel, Kadenz, Skelett, Serien, Kette, Schwellen
+│   ├── wettbewerb-und-suche.md            Live-Scan 05.11.2026: Kanäle, Keywords, Lücken, Trend-Kandidaten
+│   └── kanal-setup.md                     Name, Beschreibung, Banner, Trailer, Playlists, Standard-Texte
 ├── produktion/
 │   ├── pipeline.md                        12 Stufen von Signal bis Analytics + Qualitäts-Tor
 │   ├── ideen-bank.md                      14 Ideen mit Quell-Signal, Säule, Status
-│   └── skripte/                           LF-01, LF-02 (Packaging, AV-Skript, VO-Brief, Metadaten), SH-01…05, Vorlage
-├── tools/                                 trend_radar · captions_from_script · build_video · voiceover (optional)
+│   └── skripte/                           LF-01, LF-02 (Packaging, AV-Skript, VO-Brief, Metadaten), SH-01…06, Vorlage,
+│                                          *.vo.txt = Sprechtexte für Artlist (LF-01, LF-02, Trailer, SH-01…06)
+├── tools/                                 trend_radar · youtube_search_scan · captions_from_script · build_video · voiceover (optional)
 └── output/                                lokale Ausgaben (ignoriert)
 ```
 
 ## So startest du
 
-1. `strategie/brand-profile.md` lesen, alle ⚠️ bestätigen oder korrigieren.
-2. In `tools/trend_radar.py` die Kanal-IDs deiner Vergleichskanäle eintragen, einmal laufen lassen.
+1. `strategie/brand-profile.md` lesen, alle ⚠️ bestätigen oder korrigieren; `strategie/wettbewerb-und-suche.md` lesen (was in der Nische rankt).
+2. Kanal nach `strategie/kanal-setup.md` einrichten. `tools/trend_radar.py` läuft bereits mit vier Vergleichskanälen.
 3. LF-01 produzieren: Fakten-Check am echten Build → Screen-Recording → `LF-01.vo.txt` aus der
    AUDIO-Spalte → Artlist AI Voiceover → `captions_from_script.py` → Schnitt → Thumbnail-Brief
    umsetzen → Metadaten aus dem Skript → Upload mit KI-Hinweis → Endscreen auf LF-02.

@@ -1,6 +1,6 @@
 # LF-01 · „Diese 5 Dinge erledigt Meine KI komplett ohne Internet“
 
-Säule ⭐1 · Long-Form · Ziel 9–10 Min. · Format: Screen-Recording + KI-Voiceover (offengelegt)
+Säule ⭐1 · Long-Form · Ziel 7–9 Min. · Format: Screen-Recording + KI-Voiceover (offengelegt)
 Status: Skript fertig · ⚠️ Fakten-Check: jede der fünf Funktionen muss im aktuellen Build wirklich
 offline laufen. Streiche oder ersetze, was nicht belegt ist. Nichts behaupten, was die Demo nicht zeigt.
 
@@ -11,9 +11,14 @@ Alltagsaufgaben Meine KI vollständig offline erledigt, indem wir es live mit ge
 
 | | A (Empfehlung) | B | C |
 |---|---|---|---|
-| **Titel** | KI ohne Internet: 5 Dinge, die Meine KI offline erledigt | KI lokal auf Windows: 5 Aufgaben komplett ohne Cloud | Lokale KI im Test: Was ohne Internet wirklich geht |
-| Zeichen | 55 | 54 | 52 |
-| Keyword vorn | „KI ohne Internet“ | „KI lokal auf Windows“ | „Lokale KI im Test“ |
+| **Titel** | Lokale KI ohne Terminal: 5 Dinge, die Meine KI offline erledigt | Lokale KI für Nicht-Techniker: 5 Aufgaben komplett ohne Cloud | Lokale KI auf Windows: Was ohne Internet wirklich geht |
+| Zeichen | 62 | 60 | 54 |
+| Keyword vorn | „Lokale KI“ (Leit-Keyword laut Such-Scan) | „Lokale KI“ | „Lokale KI auf Windows“ |
+
+Begründung (Scan 05.11.2026, `../../strategie/wettbewerb-und-suche.md`): „lokale ki“ ist das
+einzige Keyword mit 100 % Nischen-Treffern; „ohne Terminal / für Nicht-Techniker“ ist die
+unbesetzte Lücke; „wirklich“ ist der Skepsis-Marker der Top-Videos. „KI ohne Internet“ war als
+Haupt-Keyword verunreinigt (Gaming, Musik).
 
 **Thumbnail-Brief (zeigt, was der Titel nicht sagt):**
 - Hero: Windows-Fenster von Meine KI, darüber ein **durchgestrichenes WLAN-Symbol** in Akzentfarbe.
@@ -38,7 +43,10 @@ Alltagsaufgaben Meine KI vollständig offline erledigt, indem wir es live mit ge
 | 8:15–9:15 | **Die ehrliche Grenze:** aktuelle News, sehr lange Recherchen, Bildgenerierung → Cloud besser. Hardware-Anforderung in einem Satz. | – |
 | 9:15–9:45 | **Close + NEXT:** Download-Link, Hinweis SmartScreen → Endscreen auf LF-02 | – |
 
-Wortzahl-Ziel: ~1.250 Wörter ≈ 9,5 Min. bei 130 W/Min.
+Laufzeit-Mathe: `LF-01.vo.txt` = 443 Wörter ≈ 3,4 Min. reine Sprache. Die Demo-Momente (Antwort baut sich
+auf, Scroll zu Seite 9, Formel einsetzen) tragen 3–5 Min. Bild ohne Sprache – **nur in Echtzeit, nie
+gestreckt**. Realistisch 7–9 Min. Wird es kürzer, ist es kürzer (CHAIN: kein Padding). Zeitmarken oben
+sind Richtwerte und werden nach dem Table-Read mit Stoppuhr korrigiert.
 
 ## 3. AV-Skript (Audio | Bild)
 
@@ -50,8 +58,21 @@ Wortzahl-Ziel: ~1.250 Wörter ≈ 9,5 Min. bei 130 W/Min.
 | 0:30 | Warum ist das wichtig? Wenn du Verträge, Kundendaten oder Patientenakten in einen Browser-Chat lädst, liegen die danach auf einem Server, den du nicht kennst. ... Hier bleiben sie bei dir. | [B-Roll] Netzwerkmonitor zeigt 0 B/s; Ordner „Kunden“ |
 | 0:55 | Nummer vier hat mich übrigens selbst überrascht. Aber der Reihe nach. | [Overlay] „#1“ |
 | 1:15 | Eins: Dokumente zusammenfassen. Ich zieh das PDF rein ... und frag: Was sind die drei wichtigsten Pflichten für mich als Auftragnehmer? | [Screen] Drag & Drop, Prompt wird getippt, Antwort |
-| … | *(Beats #2–#5 analog: je ein Prompt, Antwort, Zoom auf das Detail, ein Satz Einordnung – bitte beim Dreh aus dem echten Build ausfüllen)* | |
-| 8:15 | Jetzt die ehrliche Grenze. Aktuelle Nachrichten? Weiß die lokale KI nicht. Bilder generieren? Nicht ihr Job. Und bei sehr langen Recherchen ist ein großes Cloud-Modell heute schlicht besser. ... Dafür brauchst du für alles, was du gesehen hast, einen normalen Windows-PC mit ... [⚠️ echte Mindestanforderung] | [Overlay] Tabelle „Lokal ✓ / Cloud ✓“ |
+| 1:40 | Drei Pflichten, Fristen dabei, Seitenzahl dabei. ... Ich prüf die dritte kurz nach. Seite neun. Stimmt. | [Screen] Zoom auf Antwort, dann Scroll zu Seite 9 im PDF |
+| 2:05 | Das Dokument liegt immer noch nur hier. Im Taskmanager: Netzwerk null. | [B-Roll] Taskmanager Netzwerk-Spalte |
+| 2:20 | Übrigens: Das Ding läuft seit drei Minuten im Flugmodus. Ich lass ihn an. Bis zum Schluss. | [Overlay] Flugmodus-Icon, dauerhaft klein oben rechts ab hier |
+| 2:45 | Zwei: Eine E-Mail aus Stichpunkten. Ich tippe: Absage Termin Dienstag, neuer Vorschlag Donnerstag, freundlich, kurz. | [Screen] Prompt in Stichpunkten, Antwort baut sich auf |
+| 3:10 | Drei Sätze. Ohne „Ich hoffe, diese Mail erreicht Sie wohlauf“. ... Jetzt wird's praktisch: Ich ändere einen Punkt. Formeller. | [Screen] zweiter Prompt „formeller“, Vergleich beider Versionen nebeneinander |
+| 3:40 | Das ist der Unterschied zur Textbaustein-Software: Du redest mit ihr, du klickst dich nicht durch Menüs. | [Overlay] „Stichpunkte → Mail → Tonlage ändern“ |
+| 4:00 | Drei: Eine Tabelle, die ich nicht verstehe. ⚠️ Beispiel: Umsatzliste mit zwölf Spalten. Frage: Welche Spalte ist der Nettobetrag, und wie rechne ich die Marge aus? | [Screen] Excel/CSV wird ins Fenster gezogen; Prompt |
+| 4:30 | Antwort: Spalte F, und eine Formel. ... Ich setz sie ein. Fehler. Bezug stimmt nicht. Ich sag's ihr. Sie korrigiert. | [Screen] Formel in Excel einfügen, Fehler sichtbar, Korrektur-Prompt, zweite Formel funktioniert |
+| 5:10 | Das zeig ich absichtlich. Lokale Modelle machen Fehler. Der Punkt ist: Du siehst sie sofort, und die Tabelle hat deinen Rechner nie verlassen. | [Overlay] „Fehler passieren. Daten bleiben.“ |
+| 5:30 | Vier: Dateien finden. Das hat mich selbst überrascht. ⚠️ Frage: Wo ist das Angebot für Firma Meier von letztem Frühjahr? | [Screen] Prompt; Meine KI zeigt Treffer aus dem Ordner (⚠️ nur, wenn Funktion im Build existiert) |
+| 5:55 | Sie durchsucht den Ordner, den ich ihr gegeben habe. Nicht die Cloud, nicht Google Drive. Meinen Ordner. ... Das hier geht in einem Browser-Chat gar nicht. Der sieht deine Festplatte nicht. | [Overlay] Ordner-Symbol → Schloss |
+| 6:30 | Fünf: Übersetzen und umschreiben. Englischer Absatz rein, Frage: auf Deutsch, und bitte einfacher. | [Screen] Prompt, Antwort |
+| 6:55 | Ich halt das mal gegen ein Online-Tool. ⚠️ Gleich gut, leicht schlechter, besser – ehrlich sagen, was rauskommt. | [Screen] Split-Screen Vergleich, kein Zeitraffer |
+| 7:30 | Für E-Mails, Angebote, Protokolle reicht es. Für Literatur würde ich's nicht nehmen. | [Overlay] „Reicht für: … / Nicht für: …“ |
+| 8:00 | Jetzt die ehrliche Grenze. Aktuelle Nachrichten? Weiß die lokale KI nicht. Bilder generieren? Nicht ihr Job. Und bei sehr langen Recherchen ist ein großes Cloud-Modell heute schlicht besser. ... Dafür brauchst du für alles, was du gesehen hast, einen normalen Windows-PC mit ⚠️ [echte Mindestanforderung: RAM, CPU/GPU, freier Speicher] – keine Workstation, kein Server. | [Overlay] Tabelle „Lokal ✓ / Cloud ✓“ |
 | 9:15 | Wenn du's selbst ausprobieren willst: Link unten, signierter Installer. Windows wird dich warnen, weil wir noch kein Authenticode-Zertifikat haben. Warum das so ist und wie du den Download trotzdem prüfst, zeig ich dir im nächsten Video. | [Endscreen] LF-02 + Playlist „Erste Schritte“ |
 
 ## 4. VO-Brief (Artlist AI Voiceover · ElevenLabs-Werte optional)
@@ -70,11 +91,11 @@ Skript-Datei fürs Ohr: `LF-01.vo.txt` aus der AUDIO-Spalte erzeugen (ohne Zeitm
 
 ## 5. Metadaten (INDEX)
 
-**Titel:** KI ohne Internet: 5 Dinge, die Meine KI offline erledigt
+**Titel:** Lokale KI ohne Terminal: 5 Dinge, die Meine KI offline erledigt
 **Beschreibung:**
 ```
 Fünf Alltagsaufgaben, die Meine KI komplett ohne Internet erledigt – live gezeigt im Flugmodus.
-KI ohne Internet auf Windows: Dokumente zusammenfassen, E-Mails schreiben, Tabellen erklären,
+Lokale KI auf Windows ohne Terminal: Dokumente zusammenfassen, E-Mails schreiben, Tabellen erklären,
 Dateien durchsuchen, Texte umschreiben – und die ehrliche Grenze, wo Cloud-KI heute besser ist.
 
 [300–500 Wörter natürlich: was lokale KI ist, warum Datenhoheit zählt, was Meine KI anders macht,
@@ -98,7 +119,7 @@ Kapitel
 Hinweis: Die Sprecherstimme in diesem Video ist KI-generiert (ElevenLabs, lizenziert). Alle
 Bildschirmaufnahmen sind echt und ungeschnitten in der Reihenfolge.
 ```
-**Tags:** `ki ohne internet`, `ki lokal windows`, `lokale ki`, `chatgpt alternative datenschutz`, `meine ki`
+**Tags:** `lokale ki`, `ki lokal windows`, `ki ohne internet`, `lokale ki ohne terminal`, `meine ki`
 **Kategorie:** Wissenschaft & Technik · **Sichtbarkeit:** öffentlich · **madeForKids:** false
 
 ## 6. Diagnose nach 48 h (nativ in Studio lesen)

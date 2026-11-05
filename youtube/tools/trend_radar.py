@@ -5,7 +5,7 @@ trend_radar.py – Live-Trendscan für die Nische „lokale KI / Windows / Daten
 Zieht ohne API-Keys:
   * Google Trends – tägliche Trends (RSS, Region DE)
   * YouTube-RSS der Vergleichskanäle (letzte Uploads, Titel-Muster)
-  * Reddit – Top-Posts der Woche aus Nischen-Subreddits (JSON)
+  * Reddit – optional (--reddit); blockt Skripte meist mit 403, dann manuell lesen
   * Hacker News – Algolia-Suche nach Nischen-Keywords
 
 und schreibt einen Markdown-Report mit der Drei-Tore-Checkliste (FIT, SAFETY, TIMING)
@@ -45,13 +45,18 @@ NICHE_KEYWORDS = [
 ]
 
 # Vergleichskanäle (YouTube-RSS braucht die Kanal-ID "UC…", nicht den Handle).
-# ⚠️ Platzhalter – echte IDs eintragen: Kanalseite → „Kanal teilen“ → „Kanal-ID kopieren“.
+# Stand 05.11.2026; weitere IDs: Kanalseite → „Kanal teilen“ → „Kanal-ID kopieren“.
 DEFAULT_CHANNELS: dict[str, str] = {
-    # "Digitale Profis": "UC....................",
-    # "c't 3003":        "UC....................",
-    # "NetworkChuck":    "UC9x0AN7BWHpCDHSm9NiJFJQ",
+    "c't 3003": "UC1t9VFj-O6YUDPQxaVg-NkQ",
+    "The Morpheus": "UCLGY6_j7kZfA1dmmjR1J_7w",
+    "Digitale Profis": "UCv90NdTyTp7ZPPRvvSZaS5w",
+    "NetworkChuck (EN)": "UC9x0AN7BWHpCDHSm9NiJFJQ",
+    # weitere Nischen-Kanäle (IDs über Kanalseite → Teilen → Kanal-ID kopieren):
+    # "KI-Wissen mit Harald Frey", "Daniel Klozbücher", "Giorgi Lomidze – Souveräne KI",
+    # "Lokale KI mit Andreas Nürenberg", "AI mit Arnie", "Marco Franz"
 }
 
+# Reddit blockt Skript-Zugriffe ohne OAuth meist mit 403 – nur mit --reddit versuchen, sonst im Browser lesen.
 SUBREDDITS = ["LocalLLaMA", "ollama", "de_EDV", "selfhosted", "PrivacyGuides"]
 HN_QUERIES = ["local llm", "ollama", "on-device ai", "privacy ai assistant"]
 
@@ -67,8 +72,8 @@ def _get(url: str, **kw) -> requests.Response | None:
 
 
 def niche_hits(text: str) -> list[str]:
-    t = f" {text.lower()} "
-    return [k for k in NICHE_KEYWORDS if k in t]
+    t = text.lower()
+    return [k for k in NICHE_KEYWORDS if re.search(r"(?<![a-zäöüß])" + re.escape(k.strip()) + r"(?![a-zäöüß])", t)]
 
 
 # ---------------------------------------------------------------- Google Trends (DE)
@@ -167,7 +172,7 @@ def md_table(rows: list[dict], cols: list[tuple[str, str]]) -> str:
     return head + body
 
 
-def build_report(channels: dict[str, str]) -> str:
+def build_report(channels: dict[str, str], with_reddit: bool = False) -> str:
     today = dt.date.today().isoformat()
     parts = [f"# Trend-Radar · {today}\n",
              "> Kandidaten, keine Empfehlungen. Jede Zeile mit Nischen-Treffer (Spalte „Nische“) durch die drei Tore schicken.\n"]
@@ -184,9 +189,12 @@ def build_report(channels: dict[str, str]) -> str:
         parts.append(f"### {name}\n" + md_table(youtube_channel_feed(cid), [("date", "Datum"), ("title", "Titel"), ("views", "Views"), ("url", "Link"), ("hits", "Nische")]))
 
     parts.append("## Reddit (Top der Woche)\n")
-    for sub in SUBREDDITS:
-        print(f"· r/{sub} …", file=sys.stderr)
-        parts.append(f"### r/{sub}\n" + md_table(reddit_top(sub), [("score", "Score"), ("comments", "Komm."), ("title", "Titel"), ("url", "Link")]))
+    if with_reddit:
+        for sub in SUBREDDITS:
+            print(f"· r/{sub} …", file=sys.stderr)
+            parts.append(f"### r/{sub}\n" + md_table(reddit_top(sub), [("score", "Score"), ("comments", "Komm."), ("title", "Titel"), ("url", "Link")]))
+    else:
+        parts.append("_Übersprungen (Reddit blockt Skripte meist mit 403). Manuell lesen: " + ", ".join(f"[r/{s}](https://www.reddit.com/r/{s}/top/?t=week)" for s in SUBREDDITS) + " – oder `--reddit` versuchen._\n")
 
     parts.append("## Hacker News (7 Tage)\n")
     for q in HN_QUERIES:
@@ -202,6 +210,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", help="Zieldatei (Standard: ../output/trend-report-<Datum>.md)")
     ap.add_argument("--channels", help="Kommagetrennte YouTube-Kanal-IDs (UC…), zusätzlich zu DEFAULT_CHANNELS")
+    ap.add_argument("--reddit", action="store_true", help="Reddit-JSON trotzdem versuchen (meist 403)")
     args = ap.parse_args()
 
     channels = dict(DEFAULT_CHANNELS)
@@ -211,7 +220,7 @@ def main() -> None:
             if cid:
                 channels[cid] = cid
 
-    report = build_report(channels)
+    report = build_report(channels, with_reddit=args.reddit)
     out = Path(args.out) if args.out else Path(__file__).resolve().parent.parent / "output" / f"trend-report-{dt.date.today().isoformat()}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(report, encoding="utf-8")

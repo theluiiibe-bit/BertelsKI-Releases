@@ -26,7 +26,8 @@ Signal → Idee → PACKAGE → Skript (AV) → Vertonung → Bild → Captions 
 
 | Datei | Zweck | Benötigt |
 |---|---|---|
-| `trend_radar.py` | zieht Google-Trends (DE), Reddit-Nischen, Hacker News, YouTube-RSS von Vergleichskanälen → Markdown-Report mit Drei-Tore-Checkliste | Internet, Python 3.10+ (`requests`) |
+| `trend_radar.py` | zieht Google-Trends (DE), Hacker News, YouTube-RSS der Vergleichskanäle (c't 3003, Morpheus, Digitale Profis, NetworkChuck) → Markdown-Report mit Drei-Tore-Checkliste; Reddit optional | Internet, Python 3.10+ (`requests`) |
+| `youtube_search_scan.py` | Packaging-Scan der YouTube-Suche je Keyword (Titel, Kanal, Aufrufe, Alter, Länge, Titelwörter, Median-Länge) | Internet, `requests` |
 | `captions_from_script.py` | Skript (`*.vo.txt`) + Artlist-Audio → SRT (proportionales Timing, 2 × 42 Zeichen) | `ffprobe` oder `--duration` |
 | `voiceover.py` | optional: Skript → ElevenLabs MP3 + SRT (zeichen-genaue Timestamps) | `ELEVENLABS_API_KEY`, bezahlter Tarif |
 | `build_video.py` | Skript-Abschnitte → Slides (PIL) + Audio + eingebrannte Untertitel → MP4 in 16:9 und 9:16 | `ffmpeg`, `Pillow` |

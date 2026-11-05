@@ -1,6 +1,6 @@
 # LF-02 · „Warum Windows unsere App ‚unbekannt‘ nennt – und wie du sie prüfst“
 
-Säule 2 · Long-Form · Ziel 7–8 Min. · Format: Screen-Recording + Voiceover · NEXT-Ziel von LF-01
+Säule 2 · Long-Form · Ziel 5–7 Min. (`LF-02.vo.txt` = 396 Wörter ≈ 3 Min. Sprache + Bildschirm-Demos in Echtzeit) · Format: Screen-Recording + Voiceover · NEXT-Ziel von LF-01
 ⚠️ Fakten-Check: SmartScreen-Dialog im aktuellen Windows-Build nachstellen; Prüfsumme live gegen
 `manifest.json` vergleichen; keine Schritte zeigen, die Nutzer zum pauschalen Ignorieren von
 Warnungen erziehen.

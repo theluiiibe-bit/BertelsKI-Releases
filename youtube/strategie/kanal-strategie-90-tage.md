@@ -26,7 +26,7 @@
 
 | Format | Kadenz | Länge | Produktion |
 |---|---|---|---|
-| Long-Form | 1 / Woche (Do 17:00) | 8–12 Min. | Screen-Recording + KI-VO oder Talking Head, Batch alle 2 Wochen |
+| Long-Form | 1 / Woche (Do 17:00) | 10–15 Min. (Nischen-Median 12–18, nie strecken) | Screen-Recording + KI-VO oder Talking Head, Batch alle 2 Wochen |
 | Shorts | 3 / Woche (Mo, Mi, Sa) | 20–45 s | 2 aus dem Long-Form geschnitten, 1 nativ |
 | Community-Post | 1 / Woche | – | Umfrage als SPARK-Probe |
 
@@ -56,15 +56,16 @@ Shorts verweisen **manuell** auf ein konkretes Long-Form (Pinned Comment + „ve
 ## 5. 90-Tage-Plan
 
 **Tage 1–14 – Fundament**
-- Brand-Profile bestätigen (⚠️-Punkte), Kanal einrichten: Banner, Beschreibung mit Keywords
-  („KI lokal Windows“, „Datenschutz“), Trailer = LF-01 Cold Open (60 s).
+- Brand-Profile bestätigen (⚠️-Punkte), Kanal nach `kanal-setup.md` einrichten (Leit-Keyword „Lokale KI“
+  in Zeile 1, Banner, Playlists, Trailer aus `produktion/skripte/TRAILER.vo.txt`).
 - Thumbnail-Vorlage (dunkler Hintergrund, eine Akzentfarbe, Inter Bold, 2–3 Wörter) festlegen.
 - ElevenLabs-Stimme wählen/klonen, `tools/voiceover.py` einmal durchspielen.
 - UTM-Links für Download-Seite anlegen (`?utm_source=youtube&utm_medium=video&utm_campaign=LF-01`).
-- LF-01, LF-02 produzieren, 6 Shorts clippen → Puffer.
+- LF-01, LF-02 produzieren, SH-04 + SH-06 nativ, 4 Shorts clippen → Puffer.
 
 **Tage 15–60 – Rhythmus**
 - Wöchentlich: Do Long-Form, Mo/Mi/Sa Shorts, 1 Community-Umfrage.
+- Montags 15 Min.: `tools/trend_radar.py` (Kanal-RSS der Vergleichskanäle) + `tools/youtube_search_scan.py --week` → ein Trend durch die drei Tore → Sa-Short oder nichts.
 - Wöchentlicher Signal-Mine (15 Min.): Kommentare clustern → Ideen-Bank (`produktion/ideen-bank.md`).
 - Ab Video 4: ein Test & Compare pro Long-Form (3 Konzepte, eine Variable).
 - Woche 6: erster METER-Report (Ergebnis → Erklärung → 3 Empfehlungen).
